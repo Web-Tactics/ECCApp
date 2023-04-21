@@ -10,10 +10,13 @@ import BackButton from '../components/BackButton'
 import { theme } from '../core/theme'
 import { emailValidator } from '../helpers/emailValidator'
 import { passwordValidator } from '../helpers/passwordValidator'
+import useStore from '../store/zusStore'
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState({ value: '', error: '' })
   const [password, setPassword] = useState({ value: '', error: '' })
+
+  const zustandDemoText = useStore((state) => state.demo)
 
   const onLoginPressed = () => {
     const emailError = emailValidator(email.value)
@@ -32,6 +35,7 @@ export default function LoginScreen({ navigation }) {
   return (
     <Background>
       <BackButton goBack={navigation.goBack} />
+      <Text style={styles.zulink}>{zustandDemoText}</Text>
       <Logo />
       <Header>Welcome back.</Header>
       <TextInput
@@ -92,5 +96,10 @@ const styles = StyleSheet.create({
   link: {
     fontWeight: 'bold',
     color: theme.colors.primary,
+  },
+  zulink: {
+    fontWeight: 'bold',
+    color: theme.colors.primary,
+    paddingBottom: 10,
   },
 })
