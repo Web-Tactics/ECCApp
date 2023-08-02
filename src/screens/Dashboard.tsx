@@ -4,8 +4,17 @@ import Logo from '../components/Logo'
 import Header from '../components/Header'
 import Paragraph from '../components/Paragraph'
 import Button from '../components/Button'
+import ContactListScreen from './ContactList'
+import * as FileSystem from 'expo-file-system'
 
-export default function Dashboard({ navigation }) {
+interface Props {
+  navigation: any
+}
+
+const fileUri: string = `${FileSystem.documentDirectory}`
+console.log(fileUri)
+
+export default function Dashboard({ navigation }: Props): JSX.Element {
   return (
     <Background>
       <Logo />
@@ -14,6 +23,7 @@ export default function Dashboard({ navigation }) {
         Your amazing app starts here. Open you favorite code editor and start
         editing this project.
       </Paragraph>
+      <ContactListScreen />
       <Button
         mode="outlined"
         onPress={() =>

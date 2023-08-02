@@ -12,11 +12,15 @@ import { emailValidator } from '../helpers/emailValidator'
 import { passwordValidator } from '../helpers/passwordValidator'
 import useStore from '../store/zusStore'
 
-export default function LoginScreen({ navigation }) {
+interface Props {
+  navigation: any
+}
+
+export default function LoginScreen({ navigation }: Props) {
   const [email, setEmail] = useState({ value: '', error: '' })
   const [password, setPassword] = useState({ value: '', error: '' })
 
-  const zustandDemoText = useStore((state) => state.demo)
+  const zustandDemoText = useStore((state: any) => state.demo)
 
   const onLoginPressed = () => {
     const emailError = emailValidator(email.value)
@@ -42,7 +46,7 @@ export default function LoginScreen({ navigation }) {
         label="Email"
         returnKeyType="next"
         value={email.value}
-        onChangeText={(text) => setEmail({ value: text, error: '' })}
+        onChangeText={(text: string) => setEmail({ value: text, error: '' })}
         error={!!email.error}
         errorText={email.error}
         autoCapitalize="none"
@@ -54,7 +58,7 @@ export default function LoginScreen({ navigation }) {
         label="Password"
         returnKeyType="done"
         value={password.value}
-        onChangeText={(text) => setPassword({ value: text, error: '' })}
+        onChangeText={(text: string) => setPassword({ value: text, error: '' })}
         error={!!password.error}
         errorText={password.error}
         secureTextEntry
