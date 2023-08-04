@@ -7,8 +7,22 @@ import { convertHtmlToPdfAndSendPrint } from '../helpers/convertHtmlToPdfAndSend
 import useContactStore from '../store/contactStore'
 
 const ContactListScreen: React.FC = () => {
+  type initstate = any
+
+  interface Contact {
+    contactType: string
+    firstName: string
+    id: string
+    imageAvailable: boolean
+    lastName: string
+    lookupKey: string
+    middleName?: string
+    name: string
+    phoneNumbers?: any[] // Replace 'any' with the correct type for phoneNumbers if possible
+  }
+
   const [contacts, setContacts] = useState([])
-  const selection = useContactStore((state) => state.selectedArray)
+  const selection = useContactStore((state: initstate) => state.selectedArray)
 
   console.log(selection)
 
@@ -141,7 +155,7 @@ const ContactListScreen: React.FC = () => {
       try {
         const { status } = await Contacts.requestPermissionsAsync()
         if (status === 'granted') {
-          const { data } = await Contacts.getContactsAsync({
+          const { data }: any = await Contacts.getContactsAsync({
             fields: [Contacts.Fields.ID],
           })
           setContacts(data)
@@ -159,7 +173,7 @@ const ContactListScreen: React.FC = () => {
       <ContactCard
         firstName={item.firstName}
         lastName={item.lastName}
-        key={item.ID}
+        key={item.id}
       />
     </TouchableOpacity>
   )
@@ -187,3 +201,13 @@ export default ContactListScreen
 
 //Data Format
 // {"contactType": "person", "firstName": "Park", "id": "1012", "imageAvailable": false, "lastName": "Cong", "lookupKey": "3694i4a257f5e8de88190", "middleName": "Side", "name": "Park Side Cong"}, {"contactType": "person", "firstName": "Patricia", "id": "1925", "imageAvailable": false, "lastName": "Simpkins", "lookupKey": "3694i1b317ea40e0da22e.3789r1861-482A504C3A2E3A2A4E3A42483E3A444E", "name": "Patricia Simpkins", "phoneNumbers": [[Object], [Object]]}
+
+//search function
+
+// function searchContactsByFirstName(contacts: Contact[], firstName: string): Contact[] {
+//   return contacts.filter(contact => contact.firstName.toLowerCase().includes(firstName.toLowerCase()));
+// }
+
+// const searchTerm = "Pat";
+// const searchResults = searchContactsByFirstName(contacts, searchTerm);
+// console.log(searchResults);

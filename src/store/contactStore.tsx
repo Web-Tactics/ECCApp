@@ -1,13 +1,23 @@
 import { create } from 'zustand'
 
+type initstate = any
+
+interface ContactObject {
+  firstName: string
+  lastName: string
+}
+
 const useContactStore = create((set) => ({
   selectedArray: [],
-  addToSelected: (id) =>
-    set((state) => ({ selectedArray: [...state.selectedArray, id] })),
-  removeObjectByFirstAndLastName: (firstName, lastName) => {
-    set((state) => ({
+  addToSelected: (id: string) =>
+    set((state: initstate) => ({
+      selectedArray: [...state.selectedArray, id],
+    })),
+  removeObjectByFirstAndLastName: (firstName: string, lastName: String) => {
+    set((state: initstate) => ({
       selectedArray: state.selectedArray.filter(
-        (item) => !(item.firstName === firstName && item.lastName === lastName)
+        (item: ContactObject) =>
+          !(item.firstName === firstName && item.lastName === lastName)
       ),
     }))
   },
