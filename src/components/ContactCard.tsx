@@ -43,7 +43,6 @@ function ContactCard({ firstName, lastName }) {
           onPress={() => handleCheckboxChange(!isChecked, firstName, lastName)}
         />
       </View>
-      {console.log('render')}
     </View>
   )
 }

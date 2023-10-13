@@ -5,6 +5,9 @@ import * as Contacts from 'expo-contacts'
 import ContactCard from '../components/ContactCard'
 import { convertHtmlToPdfAndSendPrint } from '../helpers/convertHtmlToPdfAndSendPrint'
 import useContactStore from '../store/contactStore'
+import { Searchbar } from 'react-native-paper'
+import useDebounce from '../helpers/hooks/useDebounce'
+import SelectedNameBox from '../components/SelectedNameBox'
 
 const ContactListScreen: React.FC = () => {
   type initstate = any
@@ -22,9 +25,19 @@ const ContactListScreen: React.FC = () => {
   }
 
   const [contacts, setContacts] = useState([])
+  const [searchQuery, setSearchQuery] = useState('')
   const selection = useContactStore((state: initstate) => state.selectedArray)
+  const onChangeSearch = (query) => setSearchQuery(query)
+  //console.log(selection)
 
-  console.log(selection)
+  // function searchContactsByFirstName(
+  //   contacts: Contact[],
+  //   firstName: string
+  // ): Contact[] {
+  //   return contacts?.filter((contact) =>
+  //     contact?.firstName?.toLowerCase()?.includes(firstName.toLowerCase())
+  //   )
+  // }
 
   const htmlContent = `<html>
   <head>
@@ -156,9 +169,13 @@ const ContactListScreen: React.FC = () => {
         const { status } = await Contacts.requestPermissionsAsync()
         if (status === 'granted') {
           const { data }: any = await Contacts.getContactsAsync({
-            fields: [Contacts.Fields.ID],
+            fields: [Contacts.Fields.Name],
           })
-          setContacts(data)
+          setContacts(
+            data.filter(
+              (contact) => contact.name && contact.name.startsWith(searchQuery)
+            )
+          )
         } else {
           console.log('Permission to access contacts was denied')
         }
@@ -166,7 +183,7 @@ const ContactListScreen: React.FC = () => {
         console.error('Error loading contacts:', error)
       }
     })()
-  }, [])
+  }, [searchQuery])
   //console.log(contacts)
   const renderItem = ({ item }: { item: Contact }) => (
     <TouchableOpacity>
@@ -178,8 +195,15 @@ const ContactListScreen: React.FC = () => {
     </TouchableOpacity>
   )
 
+  // const debouncedSearchQuery = useDebounce(searchQuery, 300)
+  // const filteredContacts = searchContactsByFirstName(
+  //   contacts,
+  //   debouncedSearchQuery
+  // )
+
   return (
     <View>
+      <SelectedNameBox />
       <Text>Contact List</Text>
       <Button
         mode="contained"
@@ -188,6 +212,13 @@ const ContactListScreen: React.FC = () => {
       >
         does nothing now
       </Button>
+      {/* search bar */}
+      <Searchbar
+        placeholder="Search"
+        onChangeText={onChangeSearch}
+        value={searchQuery}
+      />
+      {/* search bar */}
       <FlatList
         data={contacts}
         renderItem={renderItem}

@@ -24,17 +24,6 @@ export default function Dashboard({ navigation }: Props): JSX.Element {
         editing this project.
       </Paragraph>
       <ContactListScreen />
-      <Button
-        mode="outlined"
-        onPress={() =>
-          navigation.reset({
-            index: 0,
-            routes: [{ name: 'StartScreen' }],
-          })
-        }
-      >
-        Logout
-      </Button>
     </Background>
   )
 }
