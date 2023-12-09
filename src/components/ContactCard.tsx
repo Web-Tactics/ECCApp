@@ -1,8 +1,6 @@
 import React, { memo } from 'react'
-import { Image, StyleSheet, Text, View } from 'react-native'
-import { Checkbox } from 'react-native-paper'
+import { StyleSheet, Text, View, Button } from 'react-native'
 import useContactStore from '../store/contactStore'
-import { useState } from 'react'
 export interface Contact {
   id: number
   name: string
@@ -11,25 +9,18 @@ export interface Contact {
   lastName: string
 }
 
-function ContactCard({ firstName, lastName }) {
-  const [isChecked, setIsChecked] = useState(false)
-  const [data, setData] = useState(null)
-  const addToSelected = useContactStore((state) => state.addToSelected)
-  //const selectedArray = useContactStore((state) => state.selectedArray)
-  const UnSelect = useContactStore(
-    (state) => state.removeObjectByFirstAndLastName
-  )
+interface ContactState {
+ checkForDuplicatesAddToSelected: (contact: Contact) => void
+}
 
-  const handleCheckboxChange = (newValue, firstName, lastName) => {
-    setIsChecked(newValue)
-    if (newValue) {
-      addToSelected({ firstName, lastName })
-      // console.log(selectedArray)
-    } else {
-      UnSelect(firstName, lastName)
-      //console.log(selectedArray)
-    }
-  }
+function ContactCard({ firstName, lastName }: Contact) {
+  const checkForDuplicatesAddToSelected = useContactStore((state:any)=>state.checkForDuplicatesAddToSelected)
+ 
+
+
+  const handleClick = <T extends {firstName: string; lastName: string}> (firstName: T['firstName'], lastName: T['lastName']) => {
+      checkForDuplicatesAddToSelected({ firstName, lastName });
+  };
 
   return (
     <View style={styles.container}>
@@ -38,10 +29,10 @@ function ContactCard({ firstName, lastName }) {
         <Text>{lastName}</Text>
       </View>
       <View>
-        <Checkbox.Android
-          status={isChecked ? 'checked' : 'unchecked'}
-          onPress={() => handleCheckboxChange(!isChecked, firstName, lastName)}
-        />
+        <Button
+        title="test2"
+        color="#f194ff"
+        onPress={() => handleClick(firstName, lastName)}/>
       </View>
     </View>
   )

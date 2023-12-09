@@ -38,6 +38,8 @@ const ContactListScreen: React.FC = () => {
   //     contact?.firstName?.toLowerCase()?.includes(firstName.toLowerCase())
   //   )
   // }
+//fill out the rest
+
 
   const htmlContent = `<html>
   <head>
@@ -98,7 +100,11 @@ const ContactListScreen: React.FC = () => {
           <div style="width: 53px; height: 2px; left: 0px; top: 62px; position: absolute; background: white"></div>
         </div>
       </div>
-      <div style="width: 187px; height: 34px; left: 15px; top: 50px; position: absolute; color: #B91E1D; font-size: 24px; font-family: Lexend; font-weight: 400; word-wrap: break-word">Howard Warren</div>
+      <div style="width: 187px; height: 34px; left: 15px; top: 50px; position: absolute; color: #B91E1D; font-size: 24px; font-family: Lexend; font-weight: 400; word-wrap: break-word">${
+        selection[2]?.firstName === undefined ? '' : selection[2].firstName
+      } ${
+    selection[2]?.lastName === undefined ? '' : selection[2].lastName
+  }</div>
       <div style="width: 122px; height: 1px; left: 15px; top: 26px; position: absolute; background: #B91E1D"></div>
       <div style="width: 140px; left: 15px; top: 13px; position: absolute; color: black; font-size: 8px; font-family: Lato; font-weight: 400; word-wrap: break-word">No mobile emergency contact card</div>
       <div style="left: 15px; top: 107px; position: absolute; color: black; font-size: 14px; font-family: Lato; font-weight: 400; word-wrap: break-word">Mobile: (222) 222-222</div>
@@ -114,7 +120,11 @@ const ContactListScreen: React.FC = () => {
           <div style="width: 53px; height: 2px; left: 0px; top: 62px; position: absolute; background: white"></div>
         </div>
       </div>
-      <div style="width: 187px; height: 34px; left: 15px; top: 50px; position: absolute; color: #B91E1D; font-size: 24px; font-family: Lexend; font-weight: 400; word-wrap: break-word">Howard Warren</div>
+      <div style="width: 187px; height: 34px; left: 15px; top: 50px; position: absolute; color: #B91E1D; font-size: 24px; font-family: Lexend; font-weight: 400; word-wrap: break-word">${
+        selection[3]?.firstName === undefined ? '' : selection[3].firstName
+      } ${
+    selection[3]?.lastName === undefined ? '' : selection[3].lastName
+  }</div>
       <div style="width: 122px; height: 1px; left: 15px; top: 26px; position: absolute; background: #B91E1D"></div>
       <div style="width: 140px; left: 15px; top: 13px; position: absolute; color: black; font-size: 8px; font-family: Lato; font-weight: 400; word-wrap: break-word">No mobile emergency contact card</div>
       <div style="left: 15px; top: 107px; position: absolute; color: black; font-size: 14px; font-family: Lato; font-weight: 400; word-wrap: break-word">Mobile: (222) 222-222</div>
@@ -132,7 +142,11 @@ const ContactListScreen: React.FC = () => {
           <div style="width: 53px; height: 2px; left: 0px; top: 62px; position: absolute; background: white"></div>
         </div>
       </div>
-      <div style="width: 187px; height: 34px; left: 15px; top: 50px; position: absolute; color: #B91E1D; font-size: 24px; font-family: Lexend; font-weight: 400; word-wrap: break-word">Howard Warren</div>
+      <div style="width: 187px; height: 34px; left: 15px; top: 50px; position: absolute; color: #B91E1D; font-size: 24px; font-family: Lexend; font-weight: 400; word-wrap: break-word">${
+        selection[4]?.firstName === undefined ? '' : selection[4].firstName
+      } ${
+    selection[4]?.lastName === undefined ? '' : selection[4].lastName
+  }</div>
       <div style="width: 122px; height: 1px; left: 15px; top: 26px; position: absolute; background: #B91E1D"></div>
       <div style="width: 140px; left: 15px; top: 13px; position: absolute; color: black; font-size: 8px; font-family: Lato; font-weight: 400; word-wrap: break-word">No mobile emergency contact card</div>
       <div style="left: 15px; top: 107px; position: absolute; color: black; font-size: 14px; font-family: Lato; font-weight: 400; word-wrap: break-word">Mobile: (222) 222-222</div>
@@ -148,7 +162,11 @@ const ContactListScreen: React.FC = () => {
           <div style="width: 53px; height: 2px; left: 0px; top: 62px; position: absolute; background: white"></div>
         </div>
       </div>
-      <div style="width: 187px; height: 34px; left: 15px; top: 50px; position: absolute; color: #B91E1D; font-size: 24px; font-family: Lexend; font-weight: 400; word-wrap: break-word">Howard Warren</div>
+      <div style="width: 187px; height: 34px; left: 15px; top: 50px; position: absolute; color: #B91E1D; font-size: 24px; font-family: Lexend; font-weight: 400; word-wrap: break-word">${
+        selection[5]?.firstName === undefined ? '' : selection[5].firstName
+      } ${
+    selection[5]?.lastName === undefined ? '' : selection[5].lastName
+  }</div>
       <div style="width: 122px; height: 1px; left: 15px; top: 26px; position: absolute; background: #B91E1D"></div>
       <div style="width: 140px; left: 15px; top: 13px; position: absolute; color: black; font-size: 8px; font-family: Lato; font-weight: 400; word-wrap: break-word">No mobile emergency contact card</div>
       <div style="left: 15px; top: 107px; position: absolute; color: black; font-size: 14px; font-family: Lato; font-weight: 400; word-wrap: break-word">Mobile: (222) 222-222</div>
