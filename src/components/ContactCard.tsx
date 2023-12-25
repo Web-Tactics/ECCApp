@@ -7,19 +7,20 @@ export interface Contact {
   photo: string
   firstName: string
   lastName: string
+  phoneNumbers: string[]
 }
 
 interface ContactState {
  checkForDuplicatesAddToSelected: (contact: Contact) => void
 }
 
-function ContactCard({ firstName, lastName }: Contact) {
+function ContactCard({ firstName, lastName, phoneNumbers }: Contact) {
   const checkForDuplicatesAddToSelected = useContactStore((state:any)=>state.checkForDuplicatesAddToSelected)
  
 
 
-  const handleClick = <T extends {firstName: string; lastName: string}> (firstName: T['firstName'], lastName: T['lastName']) => {
-      checkForDuplicatesAddToSelected({ firstName, lastName });
+  const handleClick = <T extends {firstName: string; lastName: string; phoneNumbers: string[]}> (firstName: T['firstName'], lastName: T['lastName'], phoneNumbers: T['phoneNumbers']) => {
+      checkForDuplicatesAddToSelected({ firstName, lastName, phoneNumbers });
   };
 
   return (
@@ -32,7 +33,7 @@ function ContactCard({ firstName, lastName }: Contact) {
         <Button
         title="test2"
         color="#f194ff"
-        onPress={() => handleClick(firstName, lastName)}/>
+        onPress={() => handleClick(firstName, lastName, phoneNumbers)}/>
       </View>
     </View>
   )

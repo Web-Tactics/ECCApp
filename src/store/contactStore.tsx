@@ -13,7 +13,7 @@ const useContactStore = create((set) => ({
     set((state: initstate) => ({
       selectedArray: [...state.selectedArray, id],
     })),
-    checkForDuplicatesAddToSelected: (contactObject: { firstName: string, lastName: string }) =>
+    checkForDuplicatesAddToSelected: (contactObject: { firstName: string, lastName: string, phoneNumbers: string }) =>
   set((state: initstate) => {
      // Check if the selectedArray has reached the limit of 6 items
      if (state.selectedArray.length >= 6) {
@@ -33,6 +33,7 @@ const useContactStore = create((set) => ({
     }
 
     // If contactObject is already in the selectedArray, return the current state
+    console.log(state.selectedArray[2].phoneNumbers[0])
     return state;
   }),
   removeObjectByFirstAndLastName: (firstName: string, lastName: String) => {
