@@ -28,12 +28,12 @@ const useContactStore = create((set) => ({
 
     if (!isDuplicate) {
       return {
-        selectedArray: [...state.selectedArray, contactObject],
+        selectedArray: [...state.selectedArray, contactObject]
       };
     }
 
     // If contactObject is already in the selectedArray, return the current state
-    console.log(state.selectedArray[2].phoneNumbers[0])
+    
     return state;
   }),
   removeObjectByFirstAndLastName: (firstName: string, lastName: String) => {

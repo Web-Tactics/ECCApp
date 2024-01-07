@@ -5,6 +5,8 @@ import { View, Text, Button } from 'react-native'
 import { withExpoSnack } from 'nativewind'
 import { styled } from 'nativewind'
 
+import { nanoid } from 'nanoid'
+
 const StyledView = styled(View)
 const StyledText = styled(Text)
 
@@ -30,7 +32,7 @@ function SelectedNameBox() {
           {' '}
           {selection?.map((contact:any) => {
             return (
-              <StyledText key={contact.lookupKey} className="w-16 text-black text-base font-normal">
+              <StyledText key={Math.random + contact.firstName + contact.lastName} className="w-16 text-black text-base font-normal">
                 {contact.firstName + ' ' + contact.lastName + ' '}
                 <Button
                  onPress={() => handleClick(contact.firstName,contact.lastName )}

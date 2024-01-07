@@ -29,7 +29,6 @@ export function renderPrimeHTML(data: any[]){
             <div style="width: 53px; height: 2px; left: 0px; top: 31px; position: absolute; background: white"></div>
             <div style="width: 53px; height: 2px; left: 0px; top: 62px; position: absolute; background: white"></div>
           </div>
-          ${console.log(data[0])}
         </div>
         <div style="width: 187px; height: 34px; left: 15px; top: 50px; position: absolute; color: #B91E1D; font-size: 24px; font-family: Lexend; font-weight: 400; word-wrap: break-word">${
           data[0]?.firstName === undefined ? '' : data[0].firstName

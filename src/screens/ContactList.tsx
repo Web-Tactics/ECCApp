@@ -61,10 +61,11 @@ const htmlContent = renderPrimeHTML(selection)
     })()
   }, [searchQuery])
 
+  const MemoizedContactCard = React.memo(ContactCard)
 
   const renderItem = ({ item }: { item: Contact }) => (
     <TouchableOpacity>
-      <ContactCard
+      <MemoizedContactCard
         firstName={item.firstName}
         lastName={item.lastName}
         phoneNumbers={item.phoneNumbers}
