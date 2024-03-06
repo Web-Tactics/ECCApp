@@ -5,8 +5,6 @@ import { View, Text, Button } from 'react-native'
 import { withExpoSnack } from 'nativewind'
 import { styled } from 'nativewind'
 
-import { nanoid } from 'nanoid'
-
 const StyledView = styled(View)
 const StyledText = styled(Text)
 

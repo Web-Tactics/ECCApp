@@ -9,9 +9,9 @@ export default function StartScreen({ navigation }) {
   return (
     <Background>
       <Logo />
-      <Header>Login Template</Header>
+      <Header>Welcome to the Mobile Emergency Card Creator</Header>
       <Paragraph>
-        The easiest way to start with your amazing application.
+      This app generates up to 6 contact cards using your phone's contacts and offers the convenience of printing them to store in your wallet for situations when your phone may not be available.
       </Paragraph>
       <Button
         mode="contained"
