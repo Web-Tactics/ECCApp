@@ -26,7 +26,7 @@ function ContactCard({ firstName, lastName, phoneNumbers }: Contact) {
 
   return (
     <View style={styles.container}>
-      <View>
+      <View style={styles.firstLastNameView}>
         <Text>{firstName}</Text>
         <Text>{lastName}</Text>
       </View>
@@ -52,6 +52,9 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 10,
+  },
+  firstLastNameView: {
+    width: 190,
   },
 })
 export default memo(ContactCard)

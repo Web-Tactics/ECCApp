@@ -11,7 +11,7 @@ export default function StartScreen({ navigation }) {
       <Logo />
       <Header>Welcome to the Mobile Emergency Card Creator</Header>
       <Paragraph>
-      This app generates up to 6 contact cards using your phone's contacts and offers the convenience of printing them to store in your wallet for situations when your phone may not be available.
+      This app creates up to 6 contact cards from your phone's contact list and allows you to print them, providing a handy backup to keep in your wallet for times when your phone isn't accessible.
       </Paragraph>
       <Button
         mode="contained"

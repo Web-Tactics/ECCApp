@@ -30,7 +30,7 @@ export function renderPrimeHTML(data: any[]){
             <div style="width: 53px; height: 2px; left: 0px; top: 62px; position: absolute; background: white"></div>
           </div>
         </div>
-        <div style="width: 187px; height: 34px; left: 15px; top: 50px; position: absolute; color: #B91E1D; font-size: 24px; font-family: Lexend; font-weight: 400; word-wrap: break-word">${
+        <div style="width: 187px; height: 54px; overflow: hidden; left: 15px; top: 50px; position: absolute; color: #B91E1D; font-size: 24px; font-family: Lexend; font-weight: 400; word-wrap: break-word">${
           data[0]?.firstName === undefined ? '' : data[0].firstName
         } ${
       data[0]?.lastName === undefined ? '' : data[0].lastName
@@ -58,7 +58,7 @@ export function renderPrimeHTML(data: any[]){
             <div style="width: 53px; height: 2px; left: 0px; top: 62px; position: absolute; background: white"></div>
           </div>
         </div>
-        <div style="width: 187px; height: 34px; left: 15px; top: 50px; position: absolute; color: #B91E1D; font-size: 24px; font-family: Lexend; font-weight: 400; word-wrap: break-word">${
+        <div style="width: 187px; height: 54px; overflow: hidden; left: 15px; top: 50px; position: absolute; color: #B91E1D; font-size: 24px; font-family: Lexend; font-weight: 400; word-wrap: break-word">${
           data[1]?.firstName === undefined ? '' : data[1].firstName
         } ${
       data[1]?.lastName === undefined ? '' : data[1].lastName
@@ -88,7 +88,7 @@ export function renderPrimeHTML(data: any[]){
             <div style="width: 53px; height: 2px; left: 0px; top: 62px; position: absolute; background: white"></div>
           </div>
         </div>
-        <div style="width: 187px; height: 34px; left: 15px; top: 50px; position: absolute; color: #B91E1D; font-size: 24px; font-family: Lexend; font-weight: 400; word-wrap: break-word">${
+        <div style="width: 187px; height: 54px; overflow: hidden; left: 15px; top: 50px; position: absolute; color: #B91E1D; font-size: 24px; font-family: Lexend; font-weight: 400; word-wrap: break-word">${
           data[2]?.firstName === undefined ? '' : data[2].firstName
         } ${
       data[2]?.lastName === undefined ? '' : data[2].lastName
@@ -116,7 +116,7 @@ export function renderPrimeHTML(data: any[]){
             <div style="width: 53px; height: 2px; left: 0px; top: 62px; position: absolute; background: white"></div>
           </div>
         </div>
-        <div style="width: 187px; height: 34px; left: 15px; top: 50px; position: absolute; color: #B91E1D; font-size: 24px; font-family: Lexend; font-weight: 400; word-wrap: break-word">${
+        <div style="width: 187px; height: 54px; overflow: hidden; left: 15px; top: 50px; position: absolute; color: #B91E1D; font-size: 24px; font-family: Lexend; font-weight: 400; word-wrap: break-word">${
           data[3]?.firstName === undefined ? '' : data[3].firstName
         } ${
       data[3]?.lastName === undefined ? '' : data[3].lastName
@@ -146,7 +146,7 @@ export function renderPrimeHTML(data: any[]){
             <div style="width: 53px; height: 2px; left: 0px; top: 62px; position: absolute; background: white"></div>
           </div>
         </div>
-        <div style="width: 187px; height: 34px; left: 15px; top: 50px; position: absolute; color: #B91E1D; font-size: 24px; font-family: Lexend; font-weight: 400; word-wrap: break-word">${
+        <div style="width: 187px; height: 54px; overflow: hidden; left: 15px; top: 50px; position: absolute; color: #B91E1D; font-size: 24px; font-family: Lexend; font-weight: 400; word-wrap: break-word">${
           data[4]?.firstName === undefined ? '' : data[4].firstName
         } ${
       data[4]?.lastName === undefined ? '' : data[4].lastName
@@ -174,7 +174,7 @@ export function renderPrimeHTML(data: any[]){
             <div style="width: 53px; height: 2px; left: 0px; top: 62px; position: absolute; background: white"></div>
           </div>
         </div>
-        <div style="width: 187px; height: 34px; left: 15px; top: 50px; position: absolute; color: #B91E1D; font-size: 24px; font-family: Lexend; font-weight: 400; word-wrap: break-word">${
+        <div style="width: 187px; height: 54px; overflow: hidden; left: 15px; top: 50px; position: absolute; color: #B91E1D; font-size: 24px; font-family: Lexend; font-weight: 400; word-wrap: break-word">${
           data[5]?.firstName === undefined ? '' : data[5].firstName
         } ${
       data[5]?.lastName === undefined ? '' : data[5].lastName
