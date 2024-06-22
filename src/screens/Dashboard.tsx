@@ -19,10 +19,6 @@ export default function Dashboard({ navigation }: Props): JSX.Element {
     <Background>
       <Logo />
       <Header>Contact List Dashboard</Header>
-      <Paragraph>
-        Your amazing app starts here. Open you favorite code editor and start
-        editing this project.
-      </Paragraph>
       <ContactListScreen />
     </Background>
   )

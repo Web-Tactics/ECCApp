@@ -77,15 +77,14 @@ const htmlContent = renderPrimeHTML(selection)
  
 
   return (
-    <View>
+    <View style={{ width: '100%', height: '65%' }}>
       <SelectedNameBox />
-      <Text>Contact List</Text>
       <Button
         mode="contained"
-        style={{ marginTop: 24 }}
+        style={{ marginTop: 24, marginBottom: 24}}
         onPress={() => handleClick()}
       >
-        does nothing now
+        Generate Cards
       </Button>
       {/* search bar */}
       <Searchbar
@@ -98,6 +97,8 @@ const htmlContent = renderPrimeHTML(selection)
         data={contacts}
         renderItem={renderItem}
         keyExtractor={(item) => item.lookupKey}
+        maxToRenderPerBatch={10}
+        initialNumToRender={10}
       />
       
     </View>

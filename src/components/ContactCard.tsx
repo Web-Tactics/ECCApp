@@ -1,6 +1,7 @@
 import React, { memo } from 'react'
 import { StyleSheet, Text, View, Button } from 'react-native'
 import useContactStore from '../store/contactStore'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 export interface Contact {
   id: number
   name: string
@@ -25,49 +26,39 @@ function ContactCard({ firstName, lastName, phoneNumbers }: Contact) {
 
   return (
     <View style={styles.container}>
-      <View style={styles.profileContainer}>
+      <View>
         <Text>{firstName}</Text>
         <Text>{lastName}</Text>
       </View>
-      <View>
-        <Button
-        title="test2"
-        color="#f194ff"
-        onPress={() => handleClick(firstName, lastName, phoneNumbers)}/>
-      </View>
+      <TouchableOpacity
+      style={styles.selectButton}
+      onPress={() => handleClick(firstName, lastName, phoneNumbers)}>
+      <Text style={styles.buttonText}>Select</Text>
+      </TouchableOpacity>
     </View>
   )
 }
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    shadowColor: 'black',
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 4,
-    shadowOpacity: 0.26,
-    elevation: 4,
     backgroundColor: '#fff',
     padding: 16,
     marginBottom: 16,
   },
-  photo: {
-    width: 80,
-    height: 80,
-    borderRadius: 80 / 2,
-    overflow: 'hidden',
-    borderWidth: 2,
-    borderColor: 'red',
+  selectButton: {
+    padding: 8,
+    marginLeft: 25,
+    backgroundColor: '#f194ff',
   },
-  profileContainer: {
-    flexDirection: 'column',
-    marginLeft: 16,
-  },
-  nameText: {
-    fontSize: 24,
-    fontWeight: 'bold',
-  },
-  bornAtText: {
-    fontSize: 18,
+  buttonText: {
+    fontSize: 10,
   },
 })
 export default memo(ContactCard)
+
+
+// elevation: 4,
+
+// shadowColor: 'black',
+// shadowRadius: 4,
+// shadowOpacity: 0.26,
