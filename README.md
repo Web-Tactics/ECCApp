@@ -39,7 +39,7 @@ To install the Mobile Emergency Contact Card app, follow these steps:
 
 ## Support
 
-For any issues, feedback, or support, please contact us at [support@example.com](mailto:support@example.com).
+For any issues, feedback, or support, please contact us at [support@example.com](mailto:howardwarren89@gmail.com).
 
 ## License
 
