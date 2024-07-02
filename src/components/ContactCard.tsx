@@ -59,9 +59,3 @@ const styles = StyleSheet.create({
 })
 export default memo(ContactCard)
 
-
-// elevation: 4,
-
-// shadowColor: 'black',
-// shadowRadius: 4,
-// shadowOpacity: 0.26,

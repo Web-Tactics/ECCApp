@@ -34,8 +34,7 @@ function SelectedNameBox() {
               <Fragment key={index} >
                 <StyledText key={Math.random + contact.firstName + contact.lastName} className="w-16 text-black text-base font-normal">
                 {contact.firstName + ' ' + contact.lastName + ' '}
-                </StyledText>
-        
+                </StyledText>     
 
                  <TouchableOpacity
                     style={styles.removeButton}
