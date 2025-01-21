@@ -68,7 +68,7 @@ const htmlContent = renderPrimeHTML(selection)
       <MemoizedContactCard
         firstName={item.firstName}
         lastName={item.lastName ? item.lastName : "" }
-        phoneNumbers={item.phoneNumbers}
+        phoneNumbers={item.phoneNumbers ?? []}
         key={item.id}
       />
     </TouchableOpacity>
